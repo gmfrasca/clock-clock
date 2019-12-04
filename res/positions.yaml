@@ -1,0 +1,490 @@
+0:
+  - - hour: 3
+      min: 30
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 9
+      min: 30
+  - - hour: 12
+      min: 30
+    - hour: 3
+      min: 30
+    - hour: 9
+      min: 30
+    - hour: 6
+      min: 00
+  - - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+  - - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+  - - hour: 12
+      min: 30
+    - hour: 3
+      min: 00
+    - hour: 12
+      min: 45
+    - hour: 6
+      min: 00
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 12
+      min: 45
+1:
+  - - hour: 3
+      min: 30
+    - hour: 3
+      min: 45
+    - hour: 6
+      min: 45
+    - hour: any
+      min: any
+  - - hour: 12
+      min: 15
+    - hour: 6
+      min: 45
+    - hour: 12
+      min: 30
+    - hour: any
+      min: any
+  - - hour: any
+      min: any
+    - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+    - hour: any
+      min: any
+  - - hour: any
+      min: any
+    - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+    - hour: any
+      min: any
+  - - hour: 3
+      min: 30
+    - hour: 12
+      min: 45
+    - hour: 12
+      min: 15
+    - hour: 6
+      min: 45
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 12
+      min: 45
+2:
+  - - hour: 3
+      min: 30
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 9
+      min: 30
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 9
+      min: 30
+    - hour: 6
+      min: 00
+  - - hour: 3
+      min: 30
+    - hour: 9
+      min: 15
+    - hour: 9
+      min: 00
+    - hour: 12
+      min: 30
+  - - hour: 12
+      min: 00
+    - hour: 3
+      min: 30
+    - hour: 3
+      min: 45
+    - hour: 12
+      min: 45
+  - - hour: 6
+      min: 00
+    - hour: 12
+      min: 15
+    - hour: 9
+      min: 15
+    - hour: 6
+      min: 45
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 12
+      min: 45
+3:
+  - - hour: 3
+      min: 30
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 9
+      min: 30
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 9
+      min: 30
+    - hour: 6
+      min: 00
+  - - hour: 3
+      min: 30
+    - hour: 9
+      min: 15
+    - hour: 9
+      min: 00
+    - hour: 12
+      min: 30
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 6
+      min: 45
+    - hour: 12
+      min: 30
+  - - hour: 6
+      min: 15
+    - hour: 9
+      min: 15
+    - hour: 12
+      min: 45
+    - hour: 6
+      min: 00
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 12
+      min: 45
+4:
+  - - hour: 3
+      min: 30
+    - hour: 6
+      min: 45
+    - hour: 3
+      min: 30
+    - hour: 6
+      min: 45
+  - - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+  - - hour: 12
+      min: 30
+    - hour: 12
+      min: 15
+    - hour: 12
+      min: 45
+    - hour: 12
+      min: 30
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 6
+      min: 45
+    - hour: 12
+      min: 30
+  - - hour: any
+      min: any
+    - hour: any
+      min: any
+    - hour: 6
+      min: 00
+    - hour: 6
+      min: 00
+  - - hour: any
+      min: any
+    - hour: any
+      min: any
+    - hour: 3
+      min: 00
+    - hour: 12
+      min: 45
+5:
+  - - hour: 3
+      min: 30
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 9
+      min: 30
+  - - hour: 12
+      min: 30
+    - hour: 3
+      min: 30
+    - hour: 9
+      min: 15
+    - hour: 12
+      min: 45
+  - - hour: 6
+      min: 00
+    - hour: 3
+      min: 00
+    - hour: 9
+      min: 15
+    - hour: 9
+      min: 30
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 6
+      min: 45
+    - hour: 12
+      min: 30
+  - - hour: 6
+      min: 15
+    - hour: 9
+      min: 15
+    - hour: 12
+      min: 45
+    - hour: 6
+      min: 00
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 12
+      min: 45
+6:
+  - - hour: 3
+      min: 30
+    - hour: 6
+      min: 45
+    - hour: any
+      min: any
+    - hour: any
+      min: any
+  - - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+    - hour: any
+      min: any
+    - hour: any
+      min: any
+  - - hour: 6
+      min: 00
+    - hour: 3
+      min: 00
+    - hour: 9
+      min: 15
+    - hour: 9
+      min: 30
+  - - hour: 12
+      min: 30
+    - hour: 3
+      min: 30
+    - hour: 6
+      min: 45
+    - hour: 12
+      min: 30
+  - - hour: 12
+      min: 30
+    - hour: 3
+      min: 00
+    - hour: 12
+      min: 45
+    - hour: 6
+      min: 00
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 12
+      min: 45
+7:
+  - - hour: 3
+      min: 30
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 9
+      min: 30
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 9
+      min: 30
+    - hour: 6
+      min: 00
+  - - hour: any
+      min: any
+    - hour: any
+      min: any
+    - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+  - - hour: any
+      min: any
+    - hour: any
+      min: any
+    - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+  - - hour: any
+      min: any
+    - hour: any
+      min: any
+    - hour: 12
+      min: 30
+    - hour: 12
+      min: 30
+  - - hour: any
+      min: any
+    - hour: any
+      min: any
+    - hour: 3
+      min: 00
+    - hour: 12
+      min: 45
+8:
+  - - hour: 3
+      min: 30
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 9
+      min: 30
+  - - hour: 12
+      min: 30
+    - hour: 3
+      min: 30
+    - hour: 9
+      min: 30
+    - hour: 6
+      min: 00
+  - - hour: 12
+      min: 30
+    - hour: 12
+      min: 15
+    - hour: 9
+      min: 00
+    - hour: 12
+      min: 30
+  - - hour: 12
+      min: 30
+    - hour: 3
+      min: 30
+    - hour: 6
+      min: 45
+    - hour: 12
+      min: 30
+  - - hour: 12
+      min: 30
+    - hour: 3
+      min: 00
+    - hour: 12
+      min: 45
+    - hour: 6
+      min: 00
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 12
+      min: 45
+9:
+  - - hour: 3
+      min: 30
+    - hour: 3
+      min: 45
+    - hour: 3
+      min: 45
+    - hour: 9
+      min: 30
+  - - hour: 12
+      min: 30
+    - hour: 3
+      min: 30
+    - hour: 9
+      min: 30
+    - hour: 6
+      min: 00
+  - - hour: 12
+      min: 30
+    - hour: 12
+      min: 15
+    - hour: 9
+      min: 00
+    - hour: 12
+      min: 30
+  - - hour: 12
+      min: 15
+    - hour: 3
+      min: 45
+    - hour: 6
+      min: 45
+    - hour: 12
+      min: 30
+  - - hour: any
+      min: any
+    - hour: any
+      min: any
+    - hour: 12
+      min: 30
+    - hour: 6
+      min: 00
+  - - hour: any
+      min: any
+    - hour: any
+      min: any
+    - hour: 3
+      min: 00
+    - hour: 12
+      min: 45
