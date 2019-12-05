@@ -5,7 +5,7 @@ from datetime import datetime
 class Digit(object):
 
     def __init__(self, x, y, width, height, positions, canvas,
-                 clockwise_only=True, rotate_on_same = True, snapping=3):
+                 clockwise_only=True, rotate_on_same=True, snapping=3):
         self.x = x
         self.y = y
         self.width = width
@@ -19,7 +19,6 @@ class Digit(object):
         self.snapping = snapping
         self.init_clockarray()
 
-
     def _get_position(self, value, x, y):
         now = datetime.now()
         default_h = int(datetime.strftime(now, "%M"))
@@ -31,7 +30,7 @@ class Digit(object):
             h = h if isinstance(h, int) else default_h
             m = m if isinstance(m, int) else default_m
             return h, m
-        except Exception as e:
+        except Exception:
             return default_h, default_m
 
     def init_clockarray(self):

@@ -1,8 +1,10 @@
 from clockclock.fullclock import FullClock
 import argparse
 
+
 DEFAULT_SNAPPING_FACTOR = 3
 DEFAULT_UPDATE_TIME = 1
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -14,11 +16,13 @@ def parse_args():
                         default=DEFAULT_UPDATE_TIME)
     return parser.parse_args()
 
+
 def main():
     args = parse_args()
     fc = FullClock(args.clockwise_only, args.rotate_on_same,
                    args.snapping_factor, args.update_time)
     fc.run()
+
 
 if __name__ == '__main__':
     main()

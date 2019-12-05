@@ -12,8 +12,7 @@ DIGIT_WIDTH = 4
 DIGIT_HEIGHT = 6
 FPS_FONT = 15
 CANVAS_WIDTH = 4 * DIGIT_WIDTH * 2 * MINICLOCK_RADIUS
-CANVAS_HEIGHT = 2* DIGIT_HEIGHT * 2 * MINICLOCK_RADIUS + (1.5 * FPS_FONT)
-
+CANVAS_HEIGHT = 2 * DIGIT_HEIGHT * 2 * MINICLOCK_RADIUS + (1.5 * FPS_FONT)
 
 
 class FullClock(object):
@@ -54,8 +53,6 @@ class FullClock(object):
                                                   fill="limegreen",
                                                   font=("courier", FPS_FONT, "bold"),
                                                   text="FPS: XXX")
-
-
         self.canvas.pack()
 
     def __repr__(self):
@@ -71,7 +68,6 @@ class FullClock(object):
     def _update(self):
         now = datetime.now()
         if now > self.next:
-            print("set")
             self.now = now
             self.next = now + timedelta(seconds=self.update_time)
 
@@ -84,7 +80,7 @@ class FullClock(object):
         s1 = datetime.strftime(self.next, "%S")
 
         timediff = (self.next - now)
-        percent = (self.update_time - timediff.seconds - timediff.microseconds/1000000 ) / self.update_time
+        percent = (self.update_time - timediff.seconds - timediff.microseconds/1000000) / self.update_time
 
         self.hour_tens.update(h[0], h1[0], percent)
         self.hour_ones.update(h[1], h1[1], percent)
@@ -115,5 +111,5 @@ class FullClock(object):
                     fps = 0
                 old_s = s
                 self._update()
-        except tk.TclError as tke:
+        except tk.TclError:
             pass
