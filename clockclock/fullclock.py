@@ -27,6 +27,7 @@ class FullClock(object):
                                 borderwidth=0,
                                 highlightthickness=0,
                                 bg="grey")
+
         # Setup Digits
         with open(POS_CONFIG) as f:
             self.positions = yaml.load(f, Loader=yaml.FullLoader)
