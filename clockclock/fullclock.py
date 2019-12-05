@@ -92,12 +92,15 @@ class FullClock(object):
         old_s = 0
         fps = 0
 
-        while True:
-            fps += 1
-            now = datetime.now()
-            s = datetime.strftime(now, "%S")
-            if old_s != s:
-                self.canvas.itemconfigure(self.fps_widget, text="FPS: {}".format(fps))
-                fps = 0
-            old_s = s
-            self._update(datetime.now())
+        try:
+            while True:
+                fps += 1
+                now = datetime.now()
+                s = datetime.strftime(now, "%S")
+                if old_s != s:
+                    self.canvas.itemconfigure(self.fps_widget, text="FPS: {}".format(fps))
+                    fps = 0
+                old_s = s
+                self._update(datetime.now())
+        except tk.TclError as tke:
+            pass
