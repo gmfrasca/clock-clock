@@ -1,0 +1,18 @@
+# Python object files
+*.py[cod]
+
+# Git/gerrit
+.gitmodules
+
+# Pytest cache
+**.cache/
+
+# Setuptools
+*.egg*
+
+# Build
+build
+dist
+
+# venvs
+venv*

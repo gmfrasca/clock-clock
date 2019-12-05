@@ -18,7 +18,8 @@ CANVAS_HEIGHT = 2* DIGIT_HEIGHT * 2 * MINICLOCK_RADIUS + (1.5 * FPS_FONT)
 
 class FullClock(object):
 
-    def __init__(self, clockwise_only=True, rotate_on_same=True, snapping=3):
+    def __init__(self, clockwise_only=True, rotate_on_same=True, snapping=3,
+                 update_time=1):
         # Setup Canvas
         self.root = tk.Tk()
         self.canvas = tk.Canvas(self.root,
@@ -29,6 +30,7 @@ class FullClock(object):
                                 bg="grey")
 
         # Setup Digits
+        self.update_time = update_time
         with open(POS_CONFIG) as f:
             self.positions = yaml.load(f, Loader=yaml.FullLoader)
         common_digit_args = {
@@ -66,33 +68,44 @@ class FullClock(object):
         self.root.after(0, self.draw)
         self.root.mainloop()
 
-    def _update(self, now):
-        next = now + timedelta(seconds=1)
-        h = datetime.strftime(now, "%H")
-        m = datetime.strftime(now, "%M")
-        s = datetime.strftime(now, "%S")
-        u = int(datetime.strftime(now, "%f"))/1000000.0  # microseconds
+    def _update(self):
+        now = datetime.now()
+        if now > self.next:
+            print("set")
+            self.now = now
+            self.next = now + timedelta(seconds=self.update_time)
 
-        h1 = datetime.strftime(next, "%H")
-        m1 = datetime.strftime(next, "%M")
-        s1 = datetime.strftime(next, "%S")
+        h = datetime.strftime(self.now, "%H")
+        m = datetime.strftime(self.now, "%M")
+        s = datetime.strftime(self.now, "%S")
 
+        h1 = datetime.strftime(self.next, "%H")
+        m1 = datetime.strftime(self.next, "%M")
+        s1 = datetime.strftime(self.next, "%S")
 
-        self.hour_tens.update(h[0], h1[0], u)
-        self.hour_ones.update(h[1], h1[1], u)
-        self.min_tens.update(m[0], m1[0], u)
-        self.min_ones.update(m[1], m1[1], u)
-        self.sec_tens.update(s[0], s1[0], u)
-        self.sec_ones.update(s[1], s1[1], u)
-        self.blank1.update("any", "any", u)
-        self.blank2.update("any", "any", u)
+        timediff = (self.next - now)
+        percent = (self.update_time - timediff.seconds - timediff.microseconds/1000000 ) / self.update_time
+
+        self.hour_tens.update(h[0], h1[0], percent)
+        self.hour_ones.update(h[1], h1[1], percent)
+        self.min_tens.update(m[0], m1[0], percent)
+        self.min_ones.update(m[1], m1[1], percent)
+        self.sec_tens.update(s[0], s1[0], percent)
+        self.sec_ones.update(s[1], s1[1], percent)
+        self.blank1.update("any", "any", percent)
+        self.blank2.update("any", "any", percent)
         self.canvas.update()
 
     def draw(self):
         old_s = 0
         fps = 0
+        self.next = datetime.now()
+        self.now = datetime.now()
 
         try:
+            # Wait until an even time
+            while datetime.now().second % self.update_time != 0:
+                sleep(.1)
             while True:
                 fps += 1
                 now = datetime.now()
@@ -101,6 +114,6 @@ class FullClock(object):
                     self.canvas.itemconfigure(self.fps_widget, text="FPS: {}".format(fps))
                     fps = 0
                 old_s = s
-                self._update(datetime.now())
+                self._update()
         except tk.TclError as tke:
             pass

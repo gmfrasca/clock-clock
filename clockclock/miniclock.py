@@ -1,7 +1,7 @@
 import math
 
 
-MINICLOCK_RADIUS = 30
+MINICLOCK_RADIUS = 40
 
 
 class MiniClock(object):
