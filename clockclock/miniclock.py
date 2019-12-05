@@ -1,12 +1,12 @@
 import math
 
 
-MINICLOCK_RADIUS = 10
+MINICLOCK_RADIUS = 30
 
 
 class MiniClock(object):
 
-    def __init__(self, x, y, hour, minute):
+    def __init__(self, x, y, hour, minute, canvas):
         self.x = x
         self.y = y
         self.r = MINICLOCK_RADIUS
@@ -14,6 +14,14 @@ class MiniClock(object):
         self.y = self.r + 2 * self.r * y
         self.hour = hour
         self.minute = minute
+        self.canvas = canvas
+
+        # Create Drawing
+        self.clock = self.canvas.create_oval(self.x-self.r, self.y-self.r,
+                                         self.x+self.r, self.y+self.r,
+                                         fill="white", width=2)
+        self.hourhand = self.canvas.create_line(self.x, self.y, self.x, self.y, width=2)
+        self.minutehand = self.canvas.create_line(self.x, self.y, self.x, self.y, width=2)
 
     def __repr__(self):
         return "{}:{}".format(self.hour, self.minute)
@@ -31,12 +39,8 @@ class MiniClock(object):
         self.hour = hour
         self.minute = minute
 
-    def draw(self, canvas):
+    def draw(self):
         hour_x, hour_y = self._get_hand_endpoint_coordinates(self.hour, hourhand=True)
         min_x, min_y = self._get_hand_endpoint_coordinates(self.minute, hourhand=False)
-
-        canvas.create_oval(self.x-self.r, self.y-self.r,
-                           self.x+self.r, self.y+self.r,
-                           fill="white", width=2)
-        canvas.create_line(self.x, self.y, hour_x, hour_y, width=2)
-        canvas.create_line(self.x, self.y, min_x, min_y, width=2)
+        self.canvas.coords(self.hourhand, self.x, self.y, hour_x, hour_y)
+        self.canvas.coords(self.minutehand, self.x, self.y, min_x, min_y)

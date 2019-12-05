@@ -8,13 +8,14 @@ DEFAULT_M = 38
 
 class Digit(object):
 
-    def __init__(self, x, y, width, height, init_value, positions):
+    def __init__(self, x, y, width, height, init_value, positions, canvas):
         self.x = x
         self.y = y
         self.width = width
         self.height = height
         self.value = init_value
         self.positions = positions
+        self.canvas = canvas
         self.init_clockarray()
 
 
@@ -37,10 +38,10 @@ class Digit(object):
             row = []
             for y in range(0, self.height):
                 pos_h, pos_m = self._get_position(x, y)
-                row.append(MiniClock(self.x + x, self.y + y, pos_h, pos_m))
+                row.append(MiniClock(self.x + x, self.y + y, pos_h, pos_m, self.canvas))
             self.clock_array.append(row)
 
-    def update(self, digit, canvas):
+    def update(self, digit):
         try:
             self.value = int(digit)
         except Exception:
@@ -49,9 +50,9 @@ class Digit(object):
             for y in range(0, self.height):
                 pos_h, pos_m = self._get_position(x, y)
                 self.clock_array[x][y].update_pos(pos_h, pos_m)
-        self._draw(canvas)
+        self._draw()
 
-    def _draw(self, canvas):
+    def _draw(self):
         for x in self.clock_array:
             for y in x:
-                y.draw(canvas)
+                y.draw()
