@@ -20,8 +20,8 @@ class MiniClock(object):
         self.clock = self.canvas.create_oval(self.x-self.r, self.y-self.r,
                                          self.x+self.r, self.y+self.r,
                                          fill="white", width=2)
-        self.hourhand = self.canvas.create_line(self.x, self.y, self.x, self.y, width=2)
-        self.minutehand = self.canvas.create_line(self.x, self.y, self.x, self.y, width=2)
+        self.hourhand = self.canvas.create_line(self.x, self.y, self.x, self.y, width=3)
+        self.minutehand = self.canvas.create_line(self.x, self.y, self.x, self.y, width=3)
 
     def __repr__(self):
         return "{}:{}".format(self.hour, self.minute)
